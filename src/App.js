@@ -10,7 +10,10 @@
   File-kasta fiiri si aad u ogaato PROPS-ka uu doonaayo.
 */
 
-import React from 'react';
+import React, { useState } from 'react';
+import Post from './components/Posts/Post';
+import SearchBar from './components/SearchBar/SearchBar';
+import dummyData from './dummy-data';
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
 // Soo jiido Posts iyo SearchBar components-ka
 
@@ -21,7 +24,8 @@ import React from 'react';
 
 import './App.css';
 
-const App = () => {
+const App = (props) => {
+  const [post, setPost] = useState(post.likes);
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
   // Waxaa sameysaa state la dhaho 'posts' si aad ugu keydisid wixii dummyData ka imaanaayo.
 
@@ -30,6 +34,9 @@ const App = () => {
 
   return (
     <div className='App'>
+      <Post post = {post} />
+      <SearchBar />
+      <dummyData />
       {/* Add SearchBar and Posts here to render them */}
       {/* Soo jiido SearchBar iyo Posts components-ka hoos, si aad u muujiyo */}
 
